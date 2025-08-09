@@ -1,0 +1,15 @@
+{
+	"required": true,
+	"package": "com.lumi.dcg.mixin",
+	"compatibilityLevel": "JAVA_21",
+	"mixins": [
+		"CobblestoneMixin",
+		"StoneMixin"
+	],
+	"injectors": {
+		"defaultRequire": 1
+	},
+	"overwrites": {
+		"requireAnnotations": true
+	}
+}

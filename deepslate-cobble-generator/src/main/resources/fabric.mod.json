@@ -1,0 +1,31 @@
+{
+	"schemaVersion": 1,
+	"id": "deepslate-cobble-gen",
+	"version": "${version}",
+	"name": "Deepslate Cobble Gen",
+	"description": "Makes lava and water generate deepslate at y=0 and below",
+	"authors": [
+		"LumiLovesYou"
+	],
+	"contact": {
+		"homepage": "https://modrinth.com/mod/deepslate-cobble-gen",
+		"sources": "https://github.com/lumilovesyou/Deepslate-Cobble-Gen"
+	},
+	"license": "MIT",
+	"icon": "assets/deepslate-cobble-gen/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"com.lumi.dcg.DeepslateCobbleGen"
+		]
+	},
+	"mixins": [
+		"deepslate-cobble-gen.mixins.json"
+	],
+	"depends": {
+		"fabricloader": ">=0.17.2",
+		"minecraft": "~1.21.8",
+		"java": ">=21",
+		"fabric-api": "*"
+	}
+}
