@@ -11,13 +11,11 @@ import org.spongepowered.asm.mixin.injection.Redirect;
 
 @Mixin(LavaFluid.class)
 public class StoneMixin {
-    @Redirect(
-            method = "spreadTo", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/level/LevelAccessor;setBlock(Lnet/minecraft/core/BlockPos;Lnet/minecraft/world/level/block/state/BlockState;I)Z")
-    )
-    public boolean redirectBlockState(LevelAccessor world, BlockPos pos, BlockState state, int i) {
+    @Redirect(method = "spreadTo", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/level/LevelAccessor;setBlockState(Lnet/minecraft/core/BlockPos;Lnet/minecraft/world/level/block/state/BlockState;I)Z"))
+    public boolean redirectBlockState(LevelAccessor world, BlockPos pos, BlockState state, int flags) {
         if (pos.getY() < 1) {
-            return world.setBlock(pos, Blocks.DEEPSLATE.defaultBlockState(), i);
+            return world.setBlock(pos, Blocks.DEEPSLATE.defaultBlockState(), flags);
         }
-        return world.setBlock(pos, state, i);
+        return world.setBlock(pos, state, flags);
     }
 }
