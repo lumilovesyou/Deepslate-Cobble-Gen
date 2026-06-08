@@ -1,4 +1,5 @@
 .gradle/
+gradle/
 build/
 out/
 classes/
@@ -13,6 +14,7 @@ bin/
 .classpath
 .project
 *.DS_Store
+Icon?
 run/
 hs_err_*.log
 replay_*.log
